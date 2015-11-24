@@ -14,8 +14,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.examples</groupId>
-	<artifactId>myCamelExample</artifactId>
+	<groupId>examples</groupId>
+	<artifactId>camelExample</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 

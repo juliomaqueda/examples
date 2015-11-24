@@ -28,17 +28,17 @@ import org.apache.camel.impl.DefaultCamelContext;
 /**
  * A Camel Router
  */
-public class Example {
+public class CamelExample {
 
 	private CamelContext camel;
 	private ProducerTemplate template;
 
 
-	public Example() throws Exception {
+	public CamelExample() throws Exception {
 		init(true);
 	}
 
-	public Example(boolean enableConsumer) throws Exception {
+	public CamelExample(boolean enableConsumer) throws Exception {
 		init(enableConsumer);
 	}
 
@@ -109,6 +109,6 @@ public class Example {
 
 	public static void main(String args[]) throws Exception
 	{
-		Example example = new Example();
+		CamelExample example = new CamelExample();
 	}
 }
