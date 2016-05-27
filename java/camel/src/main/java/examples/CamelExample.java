@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package examples;
+package examples.camel;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Consumer;
@@ -24,6 +24,7 @@ import org.apache.camel.Processor;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
+
 
 /**
  * A Camel Router
@@ -35,15 +36,18 @@ public class CamelExample {
 
 
 	public CamelExample() throws Exception {
+
 		init(true);
 	}
 
 	public CamelExample(boolean enableConsumer) throws Exception {
+
 		init(enableConsumer);
 	}
 
 
 	private void init(boolean enableConsumer) throws Exception {
+
 		// create the camel context that is the "heart" of Camel
 		camel = new DefaultCamelContext();
 
@@ -68,10 +72,11 @@ public class CamelExample {
 
 
 	private void addMessagesRoute() throws Exception {
-		camel.addRoutes(new RouteBuilder()
-		{
-			public void configure()
-			{
+
+		camel.addRoutes(new RouteBuilder() {
+
+			public void configure() {
+
 				// here is a sample which processes the input files
 		        // (leaving them in place - see the 'noop' flag)
 		        // then performs content based routing on the message
@@ -86,6 +91,7 @@ public class CamelExample {
 
 
 	private void addMessagesConsumer() throws Exception {
+
 		// Grab the endpoint where we should consume. Option - the first poll starts after 2 seconds
 		// ?consumer.delay=10000&consumer.initialDelay=2000
 	    Endpoint endpoint = camel.getEndpoint("file:target/messages/uk?consumer.delay=5000");
@@ -93,7 +99,9 @@ public class CamelExample {
 	    // create the event driven consumer
 	    // the Processor is the code what should happen when there is an event
 	    Consumer consumer = endpoint.createConsumer(new Processor() {
+
 	        public void process(Exchange exchange) throws Exception {
+
 	            // get the file body as a String
 	            String textBody = exchange.getIn().getBody(String.class);
 
@@ -107,8 +115,8 @@ public class CamelExample {
 	}
 
 
-	public static void main(String args[]) throws Exception
-	{
+	public static void main(String args[]) throws Exception	{
+
 		CamelExample example = new CamelExample();
 	}
 }

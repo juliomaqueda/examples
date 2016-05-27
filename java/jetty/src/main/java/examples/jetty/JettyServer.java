@@ -15,7 +15,8 @@ import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.xml.XmlConfiguration;
 
-public class ServerDemo extends AbstractHandler {
+
+public class JettyServer extends AbstractHandler {
 
 	@Override
 	public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -28,6 +29,7 @@ public class ServerDemo extends AbstractHandler {
 		response.getWriter().println("<h4>Not found</h1>");
 	}
 
+
 	private Server xmlBasedServer() throws Exception {
 
 		Resource serverXml = Resource.newSystemResource("server.xml");
@@ -35,6 +37,7 @@ public class ServerDemo extends AbstractHandler {
 
 		return (Server) configuration.configure();
 	}
+
 
 	private Server selfConfiguredServer() throws Exception {
 
@@ -44,10 +47,8 @@ public class ServerDemo extends AbstractHandler {
 		resourceHandler.setWelcomeFiles(new String[]{ "index.html" });
 		resourceHandler.setResourceBase(".");
 
-
 		HandlerList handlers = new HandlerList();
-		handlers.setHandlers(new Handler[] { resourceHandler, new ServerDemo() });
-
+		handlers.setHandlers(new Handler[] { resourceHandler, new JettyServer() });
 
 		Server server = new Server(8080);
 
@@ -59,10 +60,10 @@ public class ServerDemo extends AbstractHandler {
 
 	public static void main(String[] args) throws Exception {
 
-		ServerDemo demo = new ServerDemo();
+		JettyServer jetty = new JettyServer();
 
-		Server server = demo.xmlBasedServer();
-//		Server server = demo.selfConfiguredServer();
+		Server server = jetty.xmlBasedServer();
+//		Server server = jetty.selfConfiguredServer();
 
 		server.start();
 		server.join();
