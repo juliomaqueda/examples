@@ -23,34 +23,34 @@ public class TestNGDataProvider {
 
 
 	@Test(dataProvider = "subtractMethodDataProvider", dataProviderClass = CalculatorDataProvider.class)
-    public void testSubtractMethod(int a, int b, int expectedResult) {
+	public void testSubtractMethod(int a, int b, int expectedResult) {
 
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(calculator.subtract(a, b), expectedResult);
-    }
- 
-
-    @Test(dataProvider = "multiplyMethodDataProvider", dataProviderClass = CalculatorDataProvider.class)
-    public void testMultiplyMethod(int a, int b, int expectedResult) {
-
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(calculator.multiply(a, b), expectedResult);
-    }
+		Calculator calculator = new Calculator();
+		Assert.assertEquals(calculator.subtract(a, b), expectedResult);
+	}
 
 
-    public static class CalculatorDataProvider {
+	@Test(dataProvider = "multiplyMethodDataProvider", dataProviderClass = CalculatorDataProvider.class)
+	public void testMultiplyMethod(int a, int b, int expectedResult) {
 
-    	@DataProvider(name = "subtractMethodDataProvider")
-        public static Object[][] subtractMethodDataProvider() {
-
-            return new Object[][] { { 2, 5, -3 }, { 3, 7, -4 }, { 24, 5, 19 } };
-        }
+		Calculator calculator = new Calculator();
+		Assert.assertEquals(calculator.multiply(a, b), expectedResult);
+	}
 
 
-        @DataProvider(name = "multiplyMethodDataProvider")
-        public static Object[][] multiplyMethodDataProvider() {
+	public static class CalculatorDataProvider {
 
-            return new Object[][] { { 2, 5, 10 }, { 3, 7, 21 }, { 4, 5, 20 } };
-        }
-    }
+		@DataProvider(name = "subtractMethodDataProvider")
+		public static Object[][] subtractMethodDataProvider() {
+
+			return new Object[][] { { 2, 5, -3 }, { 3, 7, -4 }, { 24, 5, 19 } };
+		}
+
+
+		@DataProvider(name = "multiplyMethodDataProvider")
+		public static Object[][] multiplyMethodDataProvider() {
+
+			return new Object[][] { { 2, 5, 10 }, { 3, 7, 21 }, { 4, 5, 20 } };
+		}
+	}
 }
