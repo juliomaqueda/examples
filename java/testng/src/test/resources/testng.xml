@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suite" parallel="tests" thread-count="1">
+
+<!-- 	<test name="all"> -->
+<!-- 		<packages> -->
+<!-- 			<package name="examples.testng.*" /> -->
+<!-- 		</packages> -->
+<!-- 	</test> -->
+
+	<test name="enableDisable">
+		<classes>
+			<class name="examples.testng.TestNGEnableDisable" />
+		</classes>
+	</test>
+
+	<test name="parameters">
+		<parameter name="number1" value="30" />
+		<parameter name="number2" value="5" />
+		<parameter name="sum" value="35" />
+		<parameter name="difference" value="25" />
+		<parameter name="multiplication" value="150" />
+		<parameter name="division" value="6" />
+		<parameter name="squaresum" value="925" />
+		<parameter name="global_count" value="10" />
+
+		<classes>
+			<class name="examples.testng.TestNGParameters" />
+		</classes>
+	</test>
+
+	<test name="groups">
+		<groups>
+			<run>
+				<include name="security" />
+				<include name="database" />
+				<include name="ui" />
+			</run>
+		</groups>
+		<classes>
+			<class name="examples.testng.TestNGGroups" />
+		</classes>
+	</test>
+
+	<test name="exceptions">
+		<classes>
+			<class name="examples.testng.TestNGExceptions" />
+		</classes>
+	</test>
+
+</suite>
