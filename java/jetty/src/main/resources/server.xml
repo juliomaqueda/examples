@@ -27,7 +27,7 @@
 						</New>
 					</Item>
 					<Item>
-						<New class="examples.jetty.ServerDemo"></New>
+						<New class="examples.jetty.JettyServer"></New>
 					</Item>
 				</Array>
 			</Set>
