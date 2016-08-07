@@ -10,6 +10,12 @@
 	<packaging>war</packaging>
 
 	<name>A Jetty example</name>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<jetty-version>8.1.18.v20150929</jetty-version>
+	</properties>
 
 	<build>
 		<plugins>
@@ -20,14 +26,11 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-	<properties>
-		<jetty-version>8.1.18.v20150929</jetty-version>
-	</properties>
 
 	<dependencies>
 		<dependency>
