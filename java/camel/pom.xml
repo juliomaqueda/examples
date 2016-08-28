@@ -11,6 +11,12 @@
 
 	<name>A Camel example</name>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<camel-version>2.9.1</camel-version>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -20,6 +26,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 
@@ -31,10 +38,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<properties>
-	    <camel-version>2.9.1</camel-version>
-	</properties>
 
 	<dependencies>
 		<dependency>
