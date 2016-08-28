@@ -1,5 +1,6 @@
 package examples.mockito;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 import java.util.List;
@@ -22,6 +23,14 @@ public class SimpleMockList {
 		//verification
 		verify(mockedList).add("one");
 		verify(mockedList).clear();
+	}
+	
+	@Test
+	public void testMockInOneLine() {
+		
+		List<String> mockedList = when(mock(List.class).size()).thenReturn(100).getMock();
+		
+		assertEquals(100, mockedList.size());
 	}
 }
 
