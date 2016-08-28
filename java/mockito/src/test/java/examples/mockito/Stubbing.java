@@ -59,7 +59,7 @@ public class Stubbing {
  * or an empty collection, as appropriate. For example 0 for an int/Integer and false for a boolean/Boolean.
  * 
  * Stubbing can be overridden: for example common stubbing can go to fixture setup but the test methods can override it.
- * Please note that overridding stubbing is a potential code smell that points out too much stubbing.
+ * Please note that overriding stubbing is a potential code smell that points out too much stubbing.
  * 
  * Once stubbed, the method will always return a stubbed value, regardless of how many times it is called.
  * 

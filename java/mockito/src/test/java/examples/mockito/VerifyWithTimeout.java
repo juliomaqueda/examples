@@ -44,7 +44,7 @@ public class VerifyWithTimeout {
 		}
 		
 		public void logResponse() {
-
+			//...
 		}
 	}
 }

@@ -35,6 +35,6 @@ public class SimpleMockList {
 }
 
 /*
- *  Once created, a mock will remember all interactions.
- *  Then you can selectively verify whatever interactions you are interested in. 
+ * Once created, a mock will remember all interactions.
+ * Then you can selectively verify whatever interactions you are interested in. 
  */
