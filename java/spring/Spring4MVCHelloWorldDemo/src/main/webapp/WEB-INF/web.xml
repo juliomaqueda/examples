@@ -1,0 +1,35 @@
+<web-app id="WebApp_ID" version="2.4"
+    xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>Spring4MVCHelloWorldDemo Web Application</display-name>
+
+	<!--
+		Things to take from here are DispatcherServlet & contextConfigLocation. DispatcherServlet is the front
+		controller which receives each request(see the url pattern) and direct the request to appropriate
+		controller.It is also responsible for directing the response from controller to appropriate views.
+
+		Look carefully at contextConfigLocation init-param. Thanks to this parameter, you can name your spring
+		configuration file anything you want and place anywhere you want, even you can provide multiple files.
+		In absence of this parameter, you are obliged to name the file as ABC-servlet.xml where ABC is the
+		dispatcher servlet name.
+	-->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
