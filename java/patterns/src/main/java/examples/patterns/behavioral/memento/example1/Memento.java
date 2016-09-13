@@ -1,4 +1,4 @@
-package examples.patterns.behavioral.memento;
+package examples.patterns.behavioral.memento.example1;
 
 public class Memento {
 
