@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>examples</groupId>
-	<artifactId>Spring4MVCHelloWorldDemo</artifactId>
+	<artifactId>HelloWorldAnnotation</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Spring4MVCHelloWorldDemo Maven Webapp</name>
+	<name>HelloWorldAnnotation</name>
 
 	<properties>
 		<springframework.version>4.2.3.RELEASE</springframework.version>
@@ -26,12 +26,16 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>2.3.1</version>
+			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -51,8 +55,19 @@
 						<target>1.8</target>
 					</configuration>
 				</plugin>
+				
+				<plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <warName>HelloWorldAnnotation</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+                </plugin>
 			</plugins>
 		</pluginManagement>
-		<finalName>Spring4MVCHelloWorldDemo</finalName>
+		<finalName>HelloWorldAnnotation</finalName>
 	</build>
 </project>
