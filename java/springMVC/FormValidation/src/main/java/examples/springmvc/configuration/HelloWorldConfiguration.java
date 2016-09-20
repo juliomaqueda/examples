@@ -26,6 +26,7 @@ public class HelloWorldConfiguration extends WebMvcConfigurerAdapter {
 		viewResolver.setViewClass(JstlView.class);
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
+
 		return viewResolver;
 	}
 
@@ -44,6 +45,7 @@ public class HelloWorldConfiguration extends WebMvcConfigurerAdapter {
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 		messageSource.setBasename("messages");
+
 		return messageSource;
 	}
 }
