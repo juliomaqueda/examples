@@ -26,6 +26,7 @@ public class StubbingVoidMethods {
 
 		mockedList.clear();
 
+		verify(mockedList).clear();
 		assertFalse(mockedList.isEmpty());
 
 		doReturn(true).when(mockedList).isEmpty();
