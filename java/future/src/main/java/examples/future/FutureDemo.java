@@ -36,7 +36,7 @@ public class FutureDemo {
 		threadpool.shutdown();
 	}
 
-	private static class FactorialCalculator implements Callable {
+	private static class FactorialCalculator implements Callable<Long> {
 
 		private final int number;
 
