@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+</head>
+
+<body>
+	<input type="text" name="dato1" id="dato1" />
+	<input type="text" name="dato2" id="dato2" />
+	<input type="text" name="resultado" id="resultado" />
+</body>
+
+<script type="text/javascript">
+	var flujoCaja1 = Rx.Observable.fromEvent(document.getElementById("dato1"), 'keyup');
+	var flujoCaja2 = Rx.Observable.fromEvent(document.getElementById("dato2"), 'keyup');
+
+	flujoCaja1.subscribe(function(elemento) {
+		console.log(elemento.srcElement.value);
+	});
+</script>
+</html>
+
+<!-- http://www.arquitecturajava.com/rx-observables-en-javascript/ -->
