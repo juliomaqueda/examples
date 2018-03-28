@@ -1,0 +1,16 @@
+{
+  "name": "baconjs-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "baconjs-example.js",
+  "dependencies": {
+    "baconjs": "^2.0.5",
+    "node-fetch": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
